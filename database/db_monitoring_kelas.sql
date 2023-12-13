@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2023 at 05:49 AM
+-- Generation Time: Dec 13, 2023 at 07:24 AM
 -- Server version: 10.4.6-MariaDB
 -- PHP Version: 7.3.9
 
@@ -30,12 +30,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `tb_penggunaan_kelas` (
   `id_penggunaan` int(11) NOT NULL,
-  `judul_kegiatan` varchar(255) DEFAULT NULL,
+  `nama_kegiatan` varchar(255) DEFAULT NULL,
   `deskripsi_kegiatan` text NOT NULL,
   `tanggal_mulai` date NOT NULL,
   `tanggal_selesai` date NOT NULL,
   `id_kelas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_penggunaan_kelas`
+--
+
+INSERT INTO `tb_penggunaan_kelas` (`id_penggunaan`, `nama_kegiatan`, `deskripsi_kegiatan`, `tanggal_mulai`, `tanggal_selesai`, `id_kelas`) VALUES
+(3, 'Workshop', 'Workshop TIK', '2023-12-13', '2023-12-16', 4);
 
 -- --------------------------------------------------------
 
@@ -56,7 +63,7 @@ CREATE TABLE `tb_ruang_kelas` (
 
 INSERT INTO `tb_ruang_kelas` (`id_kelas`, `nama_kelas`, `lokasi_kelas`, `status_kelas`) VALUES
 (1, 'Ruang Lab 1', 'Lantai 1 Gedung B', 'Kosong'),
-(2, 'Ruang Lab 2', 'Lantai 1 Gedung A', 'Terisi');
+(4, 'Ruang Lab 2', 'Lantai 1 Gedung A', 'Terisi');
 
 --
 -- Indexes for dumped tables
@@ -83,13 +90,13 @@ ALTER TABLE `tb_ruang_kelas`
 -- AUTO_INCREMENT for table `tb_penggunaan_kelas`
 --
 ALTER TABLE `tb_penggunaan_kelas`
-  MODIFY `id_penggunaan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_penggunaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `tb_ruang_kelas`
 --
 ALTER TABLE `tb_ruang_kelas`
-  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_kelas` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Constraints for dumped tables
